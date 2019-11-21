@@ -6403,7 +6403,8 @@ setTimeout(function() {
     gplay.reviews({
         appId: keys[i], // 'com.tocaboca.tocakitchen2'
         sort: gplay.sort.NEWEST,
-        num: assocArray[keys[i]]*(3/2)
+        num: assocArray[keys[i]]*(3/2),
+        throttle: 8
         })
         .then(logger.info, logger.info);
   }
