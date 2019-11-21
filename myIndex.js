@@ -6382,23 +6382,29 @@ var myStringArray2 = ['com.amanotes.pamadunknbeat',
 
 var arrayLength2 = myStringArray2.length;
 
-var revNum;
+var assocArray = new Object();
 
-for(var i=0; i<arrayLength2; i++){ // arrayLength2
+for(var i=0; i<5; i++){ // arrayLength2
     gplay.app({appId: myStringArray2[i] }) // 'com.tocaboca.tocakitchen2'
         .then((result) => {
-            if(result.reviews>3000){
-                result.reviews=3000;
-                revNum = result.reviews;
-            }else{
-                revNum = result.reviews;
-            }
+            assocArray[result.appId] = result.reviews;
         });
-    gplay.reviews({
-        appId: myStringArray2[i], // 'com.tocaboca.tocakitchen2'
-        sort: gplay.sort.RATING,
-        num: revNum
-        })
-        .then(logger.info, logger.info);
 }
 
+var delayInMilliseconds = 10*1000; //10 second
+
+setTimeout(function() {
+  //your code to be executed after 10 second
+  console.log(assocArray);
+
+  var keys = Object.keys(assocArray);
+
+  for(var i=0; i<keys.length; i++){ 
+    gplay.reviews({
+        appId: keys[i], // 'com.tocaboca.tocakitchen2'
+        sort: gplay.sort.NEWEST,
+        num: assocArray[keys[i]]*(3/2)
+        })
+        .then(logger.info, logger.info);
+  }
+}, delayInMilliseconds);
