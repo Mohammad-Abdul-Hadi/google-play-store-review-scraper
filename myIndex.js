@@ -19,8 +19,8 @@ var arrayLength2 = myStringArray2.length;
 
 var assocArray = new Object();
 
-for(var i=0; i<5; i++){ // arrayLength2
-    gplay.app({appId: myStringArray2[i] }) // 'com.tocaboca.tocakitchen2'
+for(var i=0; i<arrayLength2; i++){ // arrayLength2
+    gplay.app({appId: myStringArray2[i], throttle: 0.5 }) // 'com.tocaboca.tocakitchen2'
         .then((result) => {
             assocArray[result.appId] = result.reviews;
         });
