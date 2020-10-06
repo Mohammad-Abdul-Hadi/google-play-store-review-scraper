@@ -5,7 +5,7 @@
   "main": "myIndex.js",
   "dependencies": {
     "google-play-scraper": "^7.0.4",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "winston": "^3.2.1"
   },
   "devDependencies": {},
