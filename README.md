@@ -13,6 +13,10 @@ Documentation for used Node.js Module: https://github.com/facundoolano/google-pl
 npm install google-play-scraper
 ```
 
+```
+npm install winston
+```
+
 ## Usage
 Available methods:
 - [app](#app): Retrieves the full detail of an application.
