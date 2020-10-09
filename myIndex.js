@@ -15,7 +15,7 @@ for (var i = 0; i < arrayLength; i++) {
     gplay.list({
         category: myStringArray[i],
         collection: gplay.collection.TOP_FREE,
-        num: 120,
+        num: 1,
         throttle: 0.2
     })
         .catch(err => console.log("Error" + err))
